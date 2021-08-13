@@ -10,24 +10,30 @@ const app = express();
 // ### Serve static files in public ###
 app.use(express.static('public'));
 
+// ### Route home-page ###
+app.get('/', (request, response) => {
+   response.sendFile(__dirname + '/views/home-page.html');
+});
+
 // ### Route cases-page ###
 app.get('/cases', (request, response) => {
-   response.send('cases-page');
+   response.sendFile(__dirname + '/views/cases-page.html');
 });
 
 // ### Route about-page ###
 app.get('/about', (request, response) => {
-   response.send('about-page');
+   response.sendFile(__dirname + '/views/about-page.html');
 });
 
 // ### Route gallery-page ###
 app.get('/gallery', (request, response) => {
-   response.send('gallery-page');
+   response.sendFile(__dirname + '/views/gallery-page.html');
 });
 
-// ### Route home-page/fall-back ###
+// ### Route fall-back ###
 app.get('*', (request, response) => {
-   response.send('home-page');
+   response.redirect(301, '/');
+   console.log('Redirecting to ' + chalk.red('root') + '...');
 });
 
 // ### Start app server ###
