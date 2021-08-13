@@ -8,6 +8,26 @@ header img {
    /* width: 100px; */
 }
 
+.navbar {
+   display: flex;
+   justify-content: flex-end;
+}
+
+.navbar-brand {
+   margin-left: 0.5em;
+}
+
 .container {
    margin-top: 5em;
+}
+
+#content {
+   height: 30vh;
+   background-color: rgba(253, 247, 238, 0.74);
+   padding: 1em;
+}
+
+footer {
+   background-color: #212529;
+   height: 4em;
 }
