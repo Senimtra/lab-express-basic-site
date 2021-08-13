@@ -7,6 +7,9 @@ const chalk = require('chalk');
 // ### Create express server app ###
 const app = express();
 
+// ### Serve static files in public ###
+app.use(express.static('public'));
+
 // ### Start app server ###
 const server = app.listen(3000, () => {
    console.log('Server is listening on port ' + chalk.yellow(server.address().port) + '...')
